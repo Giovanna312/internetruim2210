@@ -1,4 +1,7 @@
-<h3>Lista de Alunos</h3>
+
+</body>
+<title>fofoletes</title>
+</html><h3>Lista de fofoletes</h3>
 <table id="tabelaAlunos" border="1">
     <thead>
         <tr>
@@ -14,7 +17,7 @@
     </tbody>
 </table>
 <hr>
-<h3>Adicionar Novo Aluno</h3>
+<h3>Adicionar Novo fofolete</h3>
 Nome:
 <input type="text" id="nome" name="nome" value="">
 <br>
@@ -31,7 +34,7 @@ Endereço:
 <button onclick="cadastrar()">cadastrar</button>
 
 <script>
-    var token = "94b4d7b27f574472a5a52abbb075a71a";
+    var token = "87cf193a8f8d4018888cf6fcc354fa37";
     // Exemplo de requisição GET para listar pessoas
     fetch("https://crudcrud.com/api/" + token + "/pessoas")
         .then(response => response.json())
@@ -59,45 +62,28 @@ Endereço:
             celulaNascimento.innerHTML = elementoQueEstaSendoPercorrido.nascimento;
             celulaTelefone.innerHTML = elementoQueEstaSendoPercorrido.telefone;
             celulaEndereco.innerHTML = elementoQueEstaSendoPercorrido.endereco;
-            celulaExcluir.innerHTML = '<button onclick="excluir(\'' + elemento._id + '\')">Excluir</button>'; 
-   
-    
+            celulaExcluir.innerHTML = '<button onclick="excluir(\'' + elementoQueEstaSendoPercorrido._id + '\')">Excluir</button>';
 
+   
 
         });
     }
-    function excluir (id) {
-        var token = "94b4d7b27f574472a5a52abbb075a71a";
-        // Exemplo de requisição POST para adicionar uma nova pessoa
-        fetch("https://crudcrud.com/api/" + token + "/pessoas", {
-            // metodo de requisição (get, post, put, delete)
-            method: "DELETE",
-            // cabeçalho da requisição(tipo de conteudo, autorizações, etc...)
-            headers: {
-                "Content-Type": "application/json"
-            },
-            // corpo da requisição (dados que serão enviados)
-            body: JSON.stringify({
-                nome: document.getElementById('nome').value,
-                nascimento: document.getElementById('nascimento').value,
-                endereco: document.getElementById('endereco').value,
-                telefone: document.getElementById('telefone').value
-            })
+   
+        
+    function excluir(id){
+        var token = "87cf193a8f8d4018888cf6fcc354fa37";
+        fetch("https://crudcrud.com/api/"+token+"/pessoas/" + id, {
+            method: "DELETE"
         })
-            .then(response => response.json())
-            .then(data => console.log("pessoa criado:", data))
-            .catch(error => console.error("Erro no POST:", error))
-            .finally(() => {
-                // redirecionar para a pagina inicial
-                setTimeout(window.location.href = "index.html", 2000);
+     .finally (() => {
+        setTimeout(window.location.href = "index.html", 2000)
+     });
 
-            });
     }
 
 
-
     function cadastrar() {
-        var token = "94b4d7b27f574472a5a52abbb075a71a";
+        var token = "87cf193a8f8d4018888cf6fcc354fa37";
         // Exemplo de requisição POST para adicionar uma nova pessoa
         fetch("https://crudcrud.com/api/" + token + "/pessoas", {
             // metodo de requisição (get, post, put, delete)
