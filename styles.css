@@ -1,0 +1,94 @@
+body {
+    background: linear-gradient(135deg, #ffe6f7, #e6f0ff);
+    font-family: "Comic Sans MS", "Poppins", sans-serif;
+    color: #ff6fb3;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  h3 {
+    color: #ff88c2;
+    font-size: 28px;
+    text-shadow: 1px 1px 2px #ffffff;
+    margin-bottom: 10px;
+  }
+  
+  table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(255, 192, 203, 0.4);
+    background-color: #fff0f7;
+  }
+  
+  th {
+    background-color: #ffcce5;
+    color: #ff4fa3;
+    padding: 10px;
+    font-size: 18px;
+  }
+  
+  td {
+    background-color: #fff8fc;
+    padding: 10px;
+    font-size: 16px;
+    color: #ff75a0;
+  }
+  
+  tr:nth-child(even) td {
+    background-color: #ffe9f4;
+  }
+  
+  table, th, td {
+    border: none;
+  }
+  
+  button {
+    background-color: #ffb6d9;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 8px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 3px 6px rgba(255, 182, 217, 0.4);
+  }
+  
+  button:hover {
+    background-color: #ff8acb;
+    transform: scale(1.05);
+  }
+  
+  input[type="text"], input[type="date"] {
+    border: 2px solid #ffb6d9;
+    border-radius: 10px;
+    padding: 6px 10px;
+    font-size: 15px;
+    background-color: #fff9fc;
+    margin-bottom: 10px;
+    outline: none;
+    color: #ff69b4;
+    transition: 0.3s;
+  }
+  
+  input:focus {
+    border-color: #ff8acb;
+    background-color: #fff0f7;
+  }
+  
+  hr {
+    border: none;
+    height: 2px;
+    width: 60%;
+    background-color: #ffcce5;
+    margin: 20px auto;
+    border-radius: 2px;
+  }
+  
+  #tabelaAlunos {
+    margin-bottom: 30px;
+  }
+  
