@@ -1,21 +1,7 @@
-
 </body>
 <title>fofoletes</title>
 <link rel="stylesheet" href="styles.css">
-</html><h3>Lista de fofoletes</h3>
 <table id="tabelaAlunos" border="1">
-    <thead>
-        <tr>
-            <th>Nome</th>
-            <th>Nascimento</th>
-            <th>Telefone</th>
-            <th>Endereço</th>
-            <th>Excluir</th>
-        </tr>
-    </thead>
-    <tbody>
-        <!-- Linhas preenchidas pelo JavaScript -->
-    </tbody>
 </table>
 <hr>
 <h3>Adicionar Novo fofolete</h3>
@@ -33,9 +19,12 @@ Endereço:
 <br>
 <input type="hidden" name="acao" value="inserir">
 <button onclick="cadastrar()">cadastrar</button>
+</div>
+<a href="pag2.html" class="voltar">Ir para a lista</a>
+</div>
 
 <script>
-    var token = "87cf193a8f8d4018888cf6fcc354fa37";
+    var token = "147ce85b42c14278b7373a148b7fbc61";
     // Exemplo de requisição GET para listar pessoas
     fetch("https://crudcrud.com/api/" + token + "/pessoas")
         .then(response => response.json())
@@ -50,7 +39,7 @@ Endereço:
         //[0] pq getElementByTagName retorna um array e queremos o seu primeiro elemento
         var tabela = document.getElementById("tabelaAlunos").getElementsByTagName("tbody")[0];
         //inserir os dados na tabela da partir da variável pessoas
-        pessoas.forEach(function (elementoQueEstaSendoPercorrido){
+        pessoas.forEach(function (elementoQueEstaSendoPercorrido) {
             //criamos uma linha usando uma função do javascript
             var linha = tabela.insertRow();
             var celulaNome = linha.insertCell(0);
@@ -65,26 +54,26 @@ Endereço:
             celulaEndereco.innerHTML = elementoQueEstaSendoPercorrido.endereco;
             celulaExcluir.innerHTML = '<button onclick="excluir(\'' + elementoQueEstaSendoPercorrido._id + '\')">Excluir</button>';
 
-   
+
 
         });
     }
-   
-        
-    function excluir(id){
-        var token = "87cf193a8f8d4018888cf6fcc354fa37";
-        fetch("https://crudcrud.com/api/"+token+"/pessoas/" + id, {
+
+
+    function excluir(id) {
+        var token = "147ce85b42c14278b7373a148b7fbc61";
+        fetch("https://crudcrud.com/api/" + token + "/pessoas/" + id, {
             method: "DELETE"
         })
-     .finally (() => {
-        setTimeout(window.location.href = "index.html", 2000)
-     });
+            .finally(() => {
+                setTimeout(window.location.href = "index.html", 2000)
+            });
 
     }
 
 
     function cadastrar() {
-        var token = "87cf193a8f8d4018888cf6fcc354fa37";
+        var token = "147ce85b42c14278b7373a148b7fbc61";
         // Exemplo de requisição POST para adicionar uma nova pessoa
         fetch("https://crudcrud.com/api/" + token + "/pessoas", {
             // metodo de requisição (get, post, put, delete)
@@ -110,6 +99,7 @@ Endereço:
 
             });
     }
+
 
 
 </script>

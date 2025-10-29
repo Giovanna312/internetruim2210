@@ -91,4 +91,16 @@ body {
   #tabelaAlunos {
     margin-bottom: 30px;
   }
+
+.voltar {
+    display: inline-block;
+    margin-top: 15px;
+    color: #ff69b4;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.voltar:hover {
+    text-decoration: underline;
+}
   
