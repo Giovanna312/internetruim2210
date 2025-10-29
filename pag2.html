@@ -10,6 +10,7 @@
             <th>Telefone</th>
             <th>Endereço</th>
             <th>Excluir</th>
+            <th>Atualizar</th>
         </tr>
     </thead>
     <tbody>
@@ -18,7 +19,7 @@
 </table>
 
 <script>
-    var token = "147ce85b42c14278b7373a148b7fbc61";
+    var token = "d457a409faac460ea996d80fc8430a1f";
     // Exemplo de requisição GET para listar pessoas
     fetch("https://crudcrud.com/api/" + token + "/pessoas")
         .then(response => response.json())
@@ -41,12 +42,14 @@
             var celulaTelefone = linha.insertCell(2);
             var celulaEndereco = linha.insertCell(3);
             var celulaExcluir = linha.insertCell(4);
+            var celulaAtualizar = linha.insertCell(5);
 
             celulaNome.innerHTML = elementoQueEstaSendoPercorrido.nome;
             celulaNascimento.innerHTML = elementoQueEstaSendoPercorrido.nascimento;
             celulaTelefone.innerHTML = elementoQueEstaSendoPercorrido.telefone;
             celulaEndereco.innerHTML = elementoQueEstaSendoPercorrido.endereco;
             celulaExcluir.innerHTML = '<button onclick="excluir(\'' + elementoQueEstaSendoPercorrido._id + '\')">Excluir</button>';
+            celulaAtualizar.innerHTML =  '<button onclick="atualizar(\'' + elementoQueEstaSendoPercorrido._id + '\',\''+elementoQueEstaSendoPercorrido.nome+'\',\''+elementoQueEstaSendoPercorrido.telefone+'\',\''+elementoQueEstaSendoPercorrido.endereco+'\',\''+elementoQueEstaSendoPercorrido.nascimento+'\')">Atualizar</button>';
 
    
 
@@ -55,7 +58,7 @@
    
         
     function excluir(id){
-        var token = "147ce85b42c14278b7373a148b7fbc61";
+        var token = "d457a409faac460ea996d80fc8430a1f";
         fetch("https://crudcrud.com/api/"+token+"/pessoas/" + id, {
             method: "DELETE"
         })
@@ -65,8 +68,11 @@
 
     }
 
+    function atualizar(id,nome,tel,end,data){
+            window.location.href = "atualizarPessoa.html?id="+id+"&nome="+nome+"&tel="+tel+"&end="+end+"&data="+data
+        }
 
 </script>
 </div>
-<a href="index.html" class="voltar">voltar</a>
+<a href="index.html" class="voltar">Voltar</a>
 </div>

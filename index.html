@@ -23,8 +23,9 @@ Endereço:
 <a href="pag2.html" class="voltar">Ir para a lista</a>
 </div>
 
+
 <script>
-    var token = "147ce85b42c14278b7373a148b7fbc61";
+    var token = "d457a409faac460ea996d80fc8430a1f";
     // Exemplo de requisição GET para listar pessoas
     fetch("https://crudcrud.com/api/" + token + "/pessoas")
         .then(response => response.json())
@@ -34,34 +35,11 @@ Endereço:
     //criamos a função bota tabela que recebe os dados das pessoas
     function botaTabela(pessoas) {
         console.log(pessoas)
-        //cria a variável tabela que pega o corpo da tabela pelo id
-        //pega a tag tbody dentro da tabela
-        //[0] pq getElementByTagName retorna um array e queremos o seu primeiro elemento
-        var tabela = document.getElementById("tabelaAlunos").getElementsByTagName("tbody")[0];
-        //inserir os dados na tabela da partir da variável pessoas
-        pessoas.forEach(function (elementoQueEstaSendoPercorrido) {
-            //criamos uma linha usando uma função do javascript
-            var linha = tabela.insertRow();
-            var celulaNome = linha.insertCell(0);
-            var celulaNascimento = linha.insertCell(1);
-            var celulaTelefone = linha.insertCell(2);
-            var celulaEndereco = linha.insertCell(3);
-            var celulaExcluir = linha.insertCell(4);
-
-            celulaNome.innerHTML = elementoQueEstaSendoPercorrido.nome;
-            celulaNascimento.innerHTML = elementoQueEstaSendoPercorrido.nascimento;
-            celulaTelefone.innerHTML = elementoQueEstaSendoPercorrido.telefone;
-            celulaEndereco.innerHTML = elementoQueEstaSendoPercorrido.endereco;
-            celulaExcluir.innerHTML = '<button onclick="excluir(\'' + elementoQueEstaSendoPercorrido._id + '\')">Excluir</button>';
-
-
-
-        });
     }
 
 
     function excluir(id) {
-        var token = "147ce85b42c14278b7373a148b7fbc61";
+        var token = "d457a409faac460ea996d80fc8430a1f";
         fetch("https://crudcrud.com/api/" + token + "/pessoas/" + id, {
             method: "DELETE"
         })
@@ -73,7 +51,7 @@ Endereço:
 
 
     function cadastrar() {
-        var token = "147ce85b42c14278b7373a148b7fbc61";
+        var token = "d457a409faac460ea996d80fc8430a1f";
         // Exemplo de requisição POST para adicionar uma nova pessoa
         fetch("https://crudcrud.com/api/" + token + "/pessoas", {
             // metodo de requisição (get, post, put, delete)
