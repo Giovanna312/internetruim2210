@@ -39,7 +39,7 @@ Endereço:
     document.getElementById('endereco').value = end
     document.getElementById('nascimento').value = data
 
-    function atualizar() {
+    function Atualizar() {
         var token = "d457a409faac460ea996d80fc8430a1f";
         //  Exemplo de requisição PUT para atualizar uma pessoa existente
         fetch("https://crudcrud.com/api/"+token+"/pessoas/"+id, {
@@ -58,7 +58,7 @@ Endereço:
             .catch(error => console.log(error))
             .finally(() => {
             // redirecionar para a pagina inicial
-            setTimeout(window.location.href = "index.html", 2000);
+            setTimeout(window.location.href = "pag2.html", 2000);
             
         });
     }
